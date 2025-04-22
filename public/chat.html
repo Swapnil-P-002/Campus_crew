@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Group Chat</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Linking Google Font for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay"></div> <!-- Optional overlay for readability -->
+  <div class="chat-container">
+    <h2 id="division-title">Chat Room</h2>
+    <div id="chat-box" class="chat-box"></div>
+
+    <input type="text" id="message-input" placeholder="Type your message..." />
+    <button id="send-btn">Send</button>
+
+    <!-- File Upload Button -->
+    <input type="file" id="file-input" />
+    <button id="send-file-btn">Send File</button>
+
+    <input type="file" id="image-upload" />
+    <button onclick="markAttendance()">Mark Attendance</button>
+    <button onclick="createPoll()">Create Poll</button>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

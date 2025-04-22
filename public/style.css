@@ -1,0 +1,101 @@
+/* Use Roboto font for a modern look */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url('img.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Optional: Dark overlay for better readability */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent black */
+  z-index: 0;
+}
+
+/* Main chat container */
+.chat-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.7); /* Dark background for better contrast */
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #333; /* Dark border */
+  color: #1E90FF; /* Blue text color */
+}
+
+/* Title */
+#division-title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1E90FF; /* Blue text for title */
+  font-size: 24px;
+}
+
+/* Chat box */
+.chat-box {
+  border: 1px solid #333; /* Dark border */
+  height: 200px;
+  overflow-y: scroll;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #000; /* Black background for the chat box */
+  color: #1E90FF; /* Blue text inside chat box */
+}
+
+/* Inputs and buttons */
+input[type="text"],
+input[type="file"],
+button {
+  margin: 5px 0;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #333; /* Dark border */
+  background-color: #000; /* Black background */
+  color: #1E90FF; /* Blue text */
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button styles */
+button {
+  background-color: #D32F2F; /* Red background for buttons */
+  color: white; /* White text */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #C2185B; /* Slightly darker red on hover */
+  box-shadow: 0 0 10px rgba(211, 47, 47, 0.6); /* Glow effect */
+}
+
+/* Focus and hover on inputs */
+input[type="text"]:focus,
+input[type="file"]:focus {
+  border: 1px solid #1E90FF; /* Blue border on focus */
+  background-color: #222; /* Darker background */
+  color: #1E90FF; /* Blue text */
+}
+
+/* Title */
+#division-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+}

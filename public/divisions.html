@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Division</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      height: 100vh;
+      background: url('img.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #222;
+      border: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background-color: rgba(255, 255, 255, 1);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h2>Select Your Division</h2>
+  <div class="button-group">
+    <button onclick="enterDivision('A')">Division A</button>
+    <button onclick="enterDivision('B')">Division B</button>
+    <button onclick="enterDivision('C')">Division C</button>
+  </div>
+
+  <script>
+    function enterDivision(division) {
+      const username = localStorage.getItem("username");
+
+      if (!username) {
+        alert("You must login first!");
+        window.location.href = "/login.html";
+        return;
+      }
+
+      const confirmEntry = confirm(`Hi ${username}, do you want to enter Division ${division}?`);
+      if (!confirmEntry) return;
+
+      const message = document.createElement("div");
+      message.textContent = `Redirecting to Division ${division}...`;
+      Object.assign(message.style, {
+        position: "fixed",
+        top: "20px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        backgroundColor: "#ffffff",
+        color: "#222",
+        padding: "12px 24px",
+        borderRadius: "8px",
+        fontSize: "16px",
+        fontFamily: "'Inter', sans-serif",
+        boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+        zIndex: "1000",
+        textAlign: "center",
+      });
+      document.body.appendChild(message);
+
+      setTimeout(() => {
+        window.location.href = `/chat.html?division=${division}`;
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
